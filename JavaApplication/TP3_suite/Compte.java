@@ -9,7 +9,11 @@ public class Compte {
     public Compte(int numCompte, String propriétaire, double solde) {
         this.numCompte = numCompte;
         this.propriétaire = propriétaire;
-        this.solde = solde;
+
+        if (solde >= 0) {
+            this.solde = solde;
+        }
+
         this.numOpération = 0;
     }
 
