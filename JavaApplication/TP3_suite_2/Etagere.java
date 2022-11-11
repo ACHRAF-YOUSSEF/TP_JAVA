@@ -3,37 +3,32 @@ package TP3_suite_2;
 import java.util.Arrays;
 
 public class Etagere {
+    private final static int taille = 20;
     private int nbLivres;
-    private int numLivre;
     private Livre[] tabLivres;
 
-    public Etagere(int nb) {
-        nbLivres = nb;
-        tabLivres = new Livre[nb];
-        numLivre = 0;
+    public Etagere() {
+        tabLivres = new Livre[taille];
+        nbLivres = 0;
     }
 
     public int getNbLivres() {
         return nbLivres;
     }
 
-    public int getNumLivre() {
-        return numLivre;
-    }
-
     public void ajouter(Livre l) {
-        if (numLivre == nbLivres) {
+        if (nbLivres == taille) {
             System.out.println("L'etagère est déja pleine");
         } else {
-            tabLivres[numLivre] = l;
-            numLivre++;
+            tabLivres[nbLivres] = l;
+            nbLivres++;
         }
     }
 
     public int chercher(String titre, String auteur) {
         for (int i = 0; i < nbLivres; i++) {
             if ((titre.equals(tabLivres[i].getTitre())) && (auteur.equals(tabLivres[i].getAuteur()))) {
-                return i;
+                return i + 1;
             }
         }
 
@@ -69,8 +64,8 @@ public class Etagere {
         Livre l5 = new Livre("a1", "t1");
         Livre l6 = new Livre("a2", "t5");
 
-        Etagere etagere1 = new Etagere(2);
-        Etagere etagere2 = new Etagere(3);
+        Etagere etagere1 = new Etagere();
+        Etagere etagere2 = new Etagere();
 
         etagere1.ajouter(l1);
         etagere1.ajouter(l2);
@@ -86,13 +81,16 @@ public class Etagere {
         // commande java)
         String auteur, titre;
 
-        if (args.length == 2) {
-            auteur = args[0];
-            titre = args[1];
-        } else {
-            auteur = "a1";
-            titre = "t2";
-        }
+        // if (args.length == 2) {
+        // auteur = args[0];
+        // titre = args[1];
+        // } else {
+        // auteur = "a1";
+        // titre = "t2";
+        // }
+
+        auteur = "a1";
+        titre = "t1";
 
         int position = etagere1.chercher(titre, auteur);
 
@@ -115,7 +113,7 @@ public class Etagere {
              */
         } else {
             System.out.println("Livre d'auteur " + auteur
-                    + " et de titre " + titre + " pas triuvée");
+                    + " et de titre " + titre + " pas trouvée");
         }
     }
 }
