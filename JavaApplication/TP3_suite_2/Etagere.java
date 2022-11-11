@@ -25,6 +25,42 @@ public class Etagere {
         }
     }
 
+    public int[] chercherLivres(String titre, String auteur) {
+        int nbP = 0;
+        int[] livre_0 = new int[20];
+
+        for (int i = 0; i < nbLivres; i++) {
+            if ((titre.equals(tabLivres[i].getTitre())) && (auteur.equals(tabLivres[i].getAuteur()))) {
+                livre_0[nbP] = i + 1;
+                nbP++;
+            }
+        }
+
+        int[] livre = new int[nbP];
+
+        System.arraycopy(livre_0, 0, livre, 0, nbP);
+
+        return livre;
+    }
+
+    public Livre[] chercherAuteur(String auteur) {
+        int nbP = 0;
+        Livre[] livre_0 = new Livre[20];
+
+        for (int i = 0; i < nbLivres; i++) {
+            if (auteur.equals(tabLivres[i].getAuteur())) {
+                livre_0[nbP] = tabLivres[i];
+                nbP++;
+            }
+        }
+
+        Livre[] livre = new Livre[nbP];
+
+        System.arraycopy(livre_0, 0, livre, 0, nbP);
+
+        return livre;
+    }
+
     public int chercher(String titre, String auteur) {
         for (int i = 0; i < nbLivres; i++) {
             if ((titre.equals(tabLivres[i].getTitre())) && (auteur.equals(tabLivres[i].getAuteur()))) {
@@ -115,5 +151,13 @@ public class Etagere {
             System.out.println("Livre d'auteur " + auteur
                     + " et de titre " + titre + " pas trouvée");
         }
+
+        System.out.println("tab de position de [" + auteur + "|" + titre + "] sur l'etagere 1 = "
+                + Arrays.toString(etagere1.chercherLivres(titre, auteur)));
+        System.out.println("tab de position de [" + auteur + "|" + titre + "] sur l'etagere 2 = "
+                + Arrays.toString(etagere2.chercherLivres(titre, auteur)));
+
+        System.out.println(Arrays.toString(etagere1.chercherAuteur(auteur)));
+        System.out.println(Arrays.toString(etagere2.chercherAuteur(auteur)));
     }
 }
