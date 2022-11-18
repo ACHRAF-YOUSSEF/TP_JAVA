@@ -7,7 +7,11 @@ public abstract class Etudiant {
 
     public Etudiant(String nom, String adresse, int numero) {
         this.nom = nom;
+        this.adresse = adresse;
+        this.numero = numero;
     }
+
+    public abstract void afficherProfil();
 
     public void afficher() {
         System.out.println("Nom: " + nom + "\nAdresse: " + adresse + "\nNuméro: " + numero);

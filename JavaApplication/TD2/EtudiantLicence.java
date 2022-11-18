@@ -9,4 +9,9 @@ public class EtudiantLicence extends Etudiant {
     public void afficher() {
         super.afficher();
     }
+
+    @Override
+    public void afficherProfil() {
+        System.out.println("Etudiants en Licence ");
+    }
 }
