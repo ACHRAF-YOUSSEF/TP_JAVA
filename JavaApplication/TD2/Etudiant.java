@@ -18,7 +18,7 @@ public abstract class Etudiant {
     }
 
     public void afficher(boolean compact) {
-        if (compact = false) {
+        if (!compact) {
             afficher();
         } else {
             System.out.println("[" + nom + "," + adresse + "," + numero + "]");
