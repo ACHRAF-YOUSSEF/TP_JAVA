@@ -8,13 +8,11 @@ public class EtudiantMaster extends Etudiant {
         this.specialite = specialite;
     }
 
-    @Override
     public void afficher() {
         super.afficher();
         System.out.println("specialite: " + specialite);
     }
 
-    @Override
     public void afficherProfil() {
         System.out.println("Etudiants en Master ");
     }
