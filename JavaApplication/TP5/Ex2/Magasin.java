@@ -28,20 +28,26 @@ public class Magasin {
         return listArticle.contains(a);
     }
 
-    public void delete(int code) {
-        int pos = -1;
-
-        for (int i = 0; i < listArticle.size(); i++) {
-            if (listArticle.get(i).getCode() == code) {
-                pos = i;
-            }
-        }
-
-        if (pos != -1) {
+    public void delete(int pos) {
+        if (listArticle.get(pos) != null) {
             System.out.println("L'article ayant le code " + listArticle.get(pos).getCode() + " a été supprimé");
             listArticle.remove(pos);
         }
     }
+
+    // public void delete(Article a) {
+    // listArticle.remove(a);
+    // }
+
+    // public void delete(int code) {
+    // for (int i = 0; i < listArticle.size(); i++) {
+    // if (listArticle.get(i).getCode() == code) {
+    // System.out.println("L'article ayant le code " + listArticle.get(i).getCode()
+    // + " a été supprimé");
+    // listArticle.remove(i);
+    // }
+    // }
+    // }
 
     public void tousLesArticles() {
         // for (Article article : listArticle) {

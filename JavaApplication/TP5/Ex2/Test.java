@@ -21,7 +21,7 @@ public class Test {
 
         System.out.println("\nTest si un article est dans le magasin ou pas : " + magasin.contains(refregerateur));
 
-        magasin.delete(1);
+        magasin.delete(0);
 
         System.out.println("\n********** Liste des articles restants : ***********");
 
