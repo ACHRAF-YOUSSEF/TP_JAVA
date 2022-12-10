@@ -1,5 +1,7 @@
 package TP5.Ex2;
 
+import java.util.Vector;
+
 public class Test {
     public static void main(String[] args) {
         Article tv = new Article("LG", 7000.00);
